@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>E-Commerce Site</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script src="./app.js" async defer></script>
+    <!-- PAGE CONTENT -->
+
+    <header id="main-page-header">
+      <div class="logo-wrapper">
+        <img src="./assets/logo.webp" alt="San Rio" id="logo-item" />
+      </div>
+      <nav id="anchor-container">
+        <a
+          class="nav-anchor active"
+          id="new-arrivals-anchor"
+          onclick="HandlePageRouting('new-arrivals-anchor')"
+          >NEW ARRIVALS</a
+        >
+        <a
+          class="nav-anchor"
+          id="apparel-anchor"
+          onclick="HandlePageRouting('apparel-anchor')"
+          >APPAREL</a
+        >
+        <a
+          class="nav-anchor"
+          id="collectibles-anchor"
+          onclick="HandlePageRouting('collectibles-anchor')"
+          >COLLECTIBLES & ACCESSORIES</a
+        >
+      </nav>
+      <div class="account-actions-container"></div>
+    </header>
+    <div class="float-my-cart">
+      <button onclick="DisplayCart()"><img src="./assets/grocery-store.png" alt=""></button>
+      <div class="cart-content" id="cart-content-route-here">
+
+      </div>
+    </div>
+    <div class="modal-for-login" id="modal-login-foo">
+      <div class="modal-container">
+        <h1>Login to your account</h1>
+        <input type="text" placeholder="Username" id="username-input-foo">
+        <input type="password" placeholder="Password" id="password-input-foo">
+        <hr style="display: flex; width: 100%; margin-top: 40px; opacity: 0.6;">
+        <button id="login-button-foo" onclick="HandleLogin()">Login</button>
+        <button id="close-button-foo" onclick="HandleLoginModal()">Close</button>
+      </div>
+    </div>
+        <div class="modal-for-login" id="modal-buying-foo">
+      <div class="modal-container">
+        <img src="./assets/product1.webp" alt="" id="product-image-foo">
+        <div class="right-side">
+          <h1 id="product-name-foo">Prod Name</h2>
+            <h4 id="product-price-foo">P000.00</h4>
+            <p>Shipping Address: Mars, Japan 269 st.</p>
+            <p>Recieve by: February 29, 2025 - February 31, 2025</p>
+            <p>Product details: Say hello to your brand new San Rio Product! Make sure to rate and share the product! We are happy to provide service to our loyal and cute customers!</p>
+          <button id="close-button-foo" onclick="HandleLoginModal()">Close</button>
+          <button id="close-button-foo" onclick="AddToCart();HandleLoginModal();">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="animation-strip">
+      <p>New arrivals!</p>
+      <p>Nab your favorites!</p>
+      <p>Christmas sale ongoing!</p>
+      <p>New Kuromi Products!</p>
+      <p>Buy gifts for friends!</p>
+      <p>Yee-haw Sale ongoing!</p>
+      <p>New arrivals!</p>
+      <p>Nab your favorites!</p>
+      <p>Christmas sale ongoing!</p>
+      <p>New Kuromi Products!</p>
+      <p>Buy gifts for friends!</p>
+      <p>Yee-haw Sale ongoing!</p>
+      <p>New arrivals!</p>
+      <p>Nab your favorites!</p>
+      <p>Christmas sale ongoing!</p>
+      <p>New Kuromi Products!</p>
+      <p>Buy gifts for friends!</p>
+      <p>Yee-haw Sale ongoing!</p>
+      <p>New arrivals!</p>
+    </div>
+    <!---->
+    <!-- ACTUAL PAGE CONTENT -->
+    <!---->
+    <div class="page-content">
+      <!-- -->
+      <!-- NEW ARRIVALS PAGE -->
+      <!-- -->
+      <div class="general-page-style active" id="new-arrivals-page">
+        <section id="landing-section">
+          <div class="content-container">
+            <img src="./assets/sect-1.webp" alt="" id="background" />
+            <div class="text-and-buttons">
+              <h1>New Arrivals</h1>
+              <h3>Yee-haw Sale!</h3>
+              <p>Make sure to nab your favorite before it solds out!</p>
+              <button onclick="HandleLoginModal('./assets/sect-1.webp', 'Yee Haw Sale','P12,599.99')">Buy Now</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="products-container">
+          <div class="product-card">
+            <img src="./assets/product1.webp" alt="" id="product-image" />
+            <div class="row-container">
+              <h3>Figurine (Limited Edition)</h3>
+              <p>P349.99</p>
+            </div>
+            <div class="details">
+              <p>4.2 Stars</p>
+              <div class="stars">
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star-dark.png" alt="" />
+              </div>
+            </div>
+            <button onclick="HandleLoginModal('./assets/product1.webp','Figurine (Limited Edition)','P349.99')">ADD TO CART</button>
+          </div>
+          <div class="product-card">
+            <p id="sale-banner">
+              -50%
+            </p>
+            <img src="./assets/product2.webp" alt="" id="product-image" />
+            <div class="row-container">
+              <h3>Hello Kitty Plushie</h3>
+              <p>P349.49</p>
+            </div>
+            <div class="details">
+              <p>4.2 Stars</p>
+              <div class="stars">
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star-dark.png" alt="" />
+              </div>
+            </div>
+            <button onclick="HandleLoginModal('./assets/product2.webp','Hello Kitty Plushie','P349.49')">ADD TO CART</button>
+          </div>
+          <div class="product-card">
+            <img src="./assets/product3.jpg" alt="" id="product-image" />
+            <div class="row-container">
+              <h3>Kuromi Plushie</h3>
+              <p>P499.99</p>
+            </div>
+            <div class="details">
+              <p>4.2 Stars</p>
+              <div class="stars">
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star-dark.png" alt="" />
+              </div>
+            </div>
+            <button onclick="HandleLoginModal('./assets/product3.jpg','Kuromi Plushie','P499.99')">ADD TO CART</button>
+          </div>
+          <div class="product-card">
+            <p id="sale-banner">
+              -40%
+            </p>
+            <img src="./assets/product4.webp" alt="" id="product-image" />
+            <div class="row-container">
+              <h3>Kuromi Notebook</h3>
+              <p>P249.99</p>
+            </div>
+            <div class="details">
+              <p>4.2 Stars</p>
+              <div class="stars">
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star-dark.png" alt="" />
+              </div>
+            </div>
+            <button onclick="HandleLoginModal('./assets/product4.webp','Kuromi Notebook','P249.99')">ADD TO CART</button>
+          </div>
+          <div class="product-card">
+            <p id="sale-banner">
+              -40%
+            </p>
+            <img src="./assets/product5.jfif" alt="" id="product-image" />
+            <div class="row-container">
+              <h3>Hello Kitty Set (Limited Edition)</h3>
+              <p>P999.99</p>
+            </div>
+            <div class="details">
+              <p>4.2 Stars</p>
+              <div class="stars">
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star-dark.png" alt="" />
+              </div>
+            </div>
+            <button onclick="HandleLoginModal('./assets/product5.jfif','Hello Kitty Set (Limited Edition)','P999.99')">ADD TO CART</button>
+          </div>
+          <div class="product-card">
+            <p id="sale-banner">
+              -50%
+            </p>
+            <img src="./assets/product6.webp" alt="" id="product-image" />
+            <div class="row-container">
+              <h3>Sanrio Characters Bag</h3>
+              <p>P1999.99</p>
+            </div>
+            <div class="details">
+              <p>4.2 Stars</p>
+              <div class="stars">
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star-dark.png" alt="" />
+              </div>
+            </div>
+            <button onclick="HandleLoginModal('./assets/product6.webp','Sanrio Characters Bag','P1999.99')">ADD TO CART</button>
+          </div>
+          <div class="product-card">
+            <img src="./assets/product7.webp" alt="" id="product-image" />
+            <div class="row-container">
+              <h3>Hello Kitty Keychain</h3>
+              <p>P199.99</p>
+            </div>
+            <div class="details">
+              <p>4.2 Stars</p>
+              <div class="stars">
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star-dark.png" alt="" />
+              </div>
+            </div>
+            <button onclick="HandleLoginModal('./assets/product7.webp','Hello Kitty Keychain','P199.99')">ADD TO CART</button>
+          </div>
+          <div class="product-card">
+            <img src="./assets/product8.jpg" alt="" id="product-image" />
+            <div class="row-container">
+              <h3>Sanrio Characters Plushie</h3>
+              <p>P699.99</p>
+            </div>
+            <div class="details">
+              <p>4.2 Stars</p>
+              <div class="stars">
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star-dark.png" alt="" />
+              </div>
+            </div>
+            <button onclick="HandleLoginModal('./assets/product8.jpg','Sanrio Characters Plushie','P699.99')">ADD TO CART</button>
+          </div>
+        </section>
+      </div>
+      <!---->
+      <!-- APPAREL PAGE -->
+      <!---->
+      <div class="general-page-style" id="apparel-page">
+        <h1>Apparels</h1>
+        <section class="products-container">
+          <div class="product-card">
+            <p id="sale-banner">
+              -50%
+            </p>
+            <img src="./assets/product6.webp" alt="" id="product-image" />
+            <div class="row-container">
+              <h3>Sanrio Characters Bag</h3>
+              <p>P1999.99</p>
+            </div>
+            <div class="details">
+              <p>4.2 Stars</p>
+              <div class="stars">
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star-dark.png" alt="" />
+              </div>
+            </div>
+            <button onclick="HandleLoginModal('./assets/product6.webp','Sanrio Characters Bag','P1999.99')">ADD TO CART</button>
+          </div>
+        </section>
+      </div>
+      <!---->
+      <!-- COLLECTIBLES PAGE -->
+      <!---->
+      <div class="general-page-style" id="collectibles-page">
+        <h1>Collectibles</h1>
+        <section class="products-container">
+          <div class="product-card">
+            <p id="sale-banner">
+              -50%
+            </p>
+            <img src="./assets/product6.webp" alt="" id="product-image" />
+            <div class="row-container">
+              <h3>Sanrio Characters Bag</h3>
+              <p>P1999.99</p>
+            </div>
+            <div class="details">
+              <p>4.2 Stars</p>
+              <div class="stars">
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star-dark.png" alt="" />
+              </div>
+            </div>
+            <button onclick="HandleLoginModal('./assets/product6.webp','Sanrio Characters Bag','P1999.99')">ADD TO CART</button>
+          </div>
+          <div class="product-card">
+            <img src="./assets/product7.webp" alt="" id="product-image" />
+            <div class="row-container">
+              <h3>Hello Kitty Keychain</h3>
+              <p>P199.99</p>
+            </div>
+            <div class="details">
+              <p>4.2 Stars</p>
+              <div class="stars">
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star.png" alt="" />
+                <img src="./assets/star-dark.png" alt="" />
+              </div>
+            </div>
+            <button onclick="HandleLoginModal('./assets/product7.webp','Hello Kitty Keychain','P199.99')">ADD TO CART</button>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!---->
+    <!-- FOOTER -->
+    <!---->
+    <footer id="footer-element">
+      <p>Ellah Cassandra Baste 2024</p>
+    </footer>
+  </body>
+</html>
